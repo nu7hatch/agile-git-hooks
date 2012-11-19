@@ -1,0 +1,30 @@
+#!/bin/sh
+
+pivotal_story_file="`pwd`/.pivotal"
+story_id=''
+
+exec < /dev/tty
+
+# Read story ID from .pivotal dotfile.
+if [ -f "$pivotal_story_file" ]; then
+    story_id=`cat $pivotal_story_file`
+fi
+
+# If story ID not specified, check if passed inline in STORY
+# environment variable.
+if [ "$story_id" = '' ]; then
+    story_id=$STORY
+fi
+
+# If story ID specified, prepend it to the commit message. 
+if [ "$story_id" != '' ]; then
+    read -p "Commit will be assigned to story #$story_id... Is it ok? (y/N) " answer
+    
+    if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+        sed -i.bak "s/^/\\[#$story_id\\] /" $1
+    else
+        echo
+        echo "Aborting..."
+        exit 1
+    fi
+fi

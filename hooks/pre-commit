@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ]; then
+    echo "ERROR: You shouldn't commit directly to 'master'. If you're working"
+    echo "on some issues or new features then you should get it done in a separate"
+    echo "branch and merge changes to master after you finish."
+    echo
+    echo "If you know what you're doing, but you know, for real... then you can"
+    echo "force this operation by re-running commit command with '--no-verify'"
+    echo "switch. But you must be aware that this approach will skip all further"
+    echo "checkings, i.a. commit message format validation."
+    echo
+    echo "Aborting..."
+
+    exit 1
+fi
