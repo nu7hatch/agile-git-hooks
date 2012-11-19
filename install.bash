@@ -3,6 +3,15 @@
 repo_url="git://github.com/nu7hatch/agile-git-hooks.git"
 temp_dir="/tmp/agile-git-hooks"
 
+echo "WARNING! This operation may destroy your already configured hooks!"
+read -p "Do you want to proceed the installation? (y/N) " answer
+
+if [ "$answer" != "y" ] && [ $answer != "Y" ]; then
+    echo
+    echo "Aborting..."
+    exit 1
+fi
+
 if [ -d "$(pwd)/.git" ]; then
     rm -rf $temp_dir
     git clone $repo_url $temp_dir
