@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ]; then
-    echo "ERROR: You shouldn't commit directly to 'master'. If you're working"
+    echo "ERROR! You shouldn't commit directly to 'master'. If you're working"
     echo "on some issues or new features then you should get it done in a separate"
     echo "branch and merge changes to master after you finish."
     echo
