@@ -1,7 +1,7 @@
 #!/bin/sh
 
 msg=`cat $1`
-match=`echo $msg | sed -n '/^\[#[0-9]\+\] .\+/p'`
+match=`echo $msg | sed '/^\[#[0-9]\+\] .\+/p'`
 
 if [ "$match" = "" ]; then
     echo "ERROR: There's no story assigned to your current work!"
@@ -14,6 +14,6 @@ if [ "$match" = "" ]; then
     echo "must be aware that this approach will skip all other validations."
     echo
     echo "Aborting..."
-    
+
     exit 1
 fi
