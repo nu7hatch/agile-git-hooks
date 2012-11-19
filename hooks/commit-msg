@@ -1,9 +1,8 @@
 #!/bin/sh
 
-msg=`cat $1`
-match=`echo $msg | sed -n '/^\[#[0-9]\+\] .\+/p'`
+cat $1 | grep '^\[#[0-9]\+\] .\+'
 
-if [ "$match" = "" ]; then
+if [ "$?" != "0" ]; then
     echo "ERROR: There's no story assigned to your current work!"
     echo 
     echo "Save a story ID in the '.pivotal' dotfile in project root directory"
@@ -14,6 +13,6 @@ if [ "$match" = "" ]; then
     echo "must be aware that this approach will skip all other validations."
     echo
     echo "Aborting..."
-    
+
     exit 1
 fi
