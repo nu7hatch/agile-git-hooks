@@ -6,7 +6,7 @@ temp_dir="/tmp/agile-git-hooks"
 echo "WARNING! This operation may destroy your already configured hooks!"
 read -p "Do you want to proceed the installation? (y/N) " answer
 
-if [ "$answer" != "y" ] && [ $answer != "Y" ]; then
+if [ "$answer" != "y" ] && [ "$answer" != "Y" ]; then
     echo
     echo "Aborting..."
     exit 1
