@@ -23,8 +23,29 @@ Execute the following script in the project root directory:
 
     $ curl -L http://git.io/RCgZXQ | bash
     
-Enjoy your hooks.
+## Usage
+
+To work with Pivotal Tracker's story just add it to `.pivotal` file:
+
+    $ echo 1234321 > .pivotal
+    $ git commit -m "Done with something"
+
+Now you'll be asked if the story you working on is ok, then magick
+happens here and the commit message is transformed into:
+
+    [#1234321] Done with something
     
+You can also specify story ID inline, using `STORY` env variable:
+
+    $ STORY=1234321 git commit -m "Done with something else"
+
+You can also manually specify story ID in your commit message. If ther will
+be no story assigned then script will ask you if it's fine.
+
+If you will try to commit directly into master then hook will remind you
+that you shouldn't do it. It will also ask you if you wanna continue or
+not.
+
 ## Copyright
 
 Released under the Weedware License.
