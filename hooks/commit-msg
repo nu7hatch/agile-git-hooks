@@ -3,6 +3,7 @@
 cat $1 | grep '^\[#[0-9]\+\] .\+'
 
 if [ "$?" != "0" ]; then
+    echo
     echo "ERROR! There's no story assigned to your current work! Save a story"
     echo "story ID in the '.pivotal' dotfile in project root directory or specify"
     echo "it in \$STORY environment variable."
