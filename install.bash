@@ -9,6 +9,8 @@ if [ "$answer" != "y" ] && [ "$answer" != "Y" ]; then
     exit 1
 fi
 
+echo
+
 repo_url="git://github.com/nu7hatch/agile-git-hooks.git"
 temp_dir="/tmp/agile-git-hooks"
 

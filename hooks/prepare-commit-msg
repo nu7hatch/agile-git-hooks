@@ -17,6 +17,7 @@ if [ "$story_id" != '' ]; then
 
     if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
         sed -i.bak "s/^/\\[#$story_id\\] /" $1
+        echo
     else
         echo
         echo "Aborting..."

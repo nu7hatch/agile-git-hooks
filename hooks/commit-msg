@@ -3,10 +3,9 @@
 cat $1 | grep '^\[#[0-9]\+\] .\+'
 
 if [ "$?" != "0" ]; then
-    echo "ERROR! There's no story assigned to your current work!"
-    echo 
-    echo "Save a story ID in the '.pivotal' dotfile in project root directory"
-    echo "or specify it in \$STORY environment variable."
+    echo "ERROR! There's no story assigned to your current work! Save a story"
+    echo "story ID in the '.pivotal' dotfile in project root directory or specify"
+    echo "it in \$STORY environment variable."
     echo
 
     exec < /dev/tty
@@ -16,5 +15,7 @@ if [ "$?" != "0" ]; then
         echo
         echo "Aborting..."
         exit 1
+    else
+        echo
     fi
 fi

@@ -13,5 +13,7 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ]; then
         echo
         echo "Aborting..."
         exit 1
+    else
+        echo
     fi
 fi
