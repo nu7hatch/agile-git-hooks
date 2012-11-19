@@ -21,7 +21,7 @@ in "agile" teams. Package contains the following hooks:
 
 Execute the following script in the project root directory:
 
-    $ curl -L http://git.io/LTbcBw | bash
+    $ curl -L http://git.io/RCgZXQ | bash
     
 Enjoy your hooks.
     
