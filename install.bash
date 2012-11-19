@@ -3,6 +3,8 @@
 repo_url="git://github.com/nu7hatch/agile-git-hooks.git"
 temp_dir="/tmp/agile-git-hooks"
 
+exec < /dev/tty
+
 echo "WARNING! This operation may destroy your already configured hooks!"
 read -p "Do you want to proceed the installation? (y/N) " answer
 

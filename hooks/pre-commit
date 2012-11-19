@@ -5,9 +5,6 @@ if [ "$(git symbolic-ref HEAD 2>/dev/null)" == "refs/heads/master" ]; then
     echo "on some issues or new features then you should get it done in a separate"
     echo "branch and merge changes to master after you finish."
     echo
-    echo "If you know what you're doing, but you know, for real... Then you can"
-    echo "force this operation now."
-    echo
     
     exec < /dev/tty
     read -p "Do you want to commit anyway? (y/N) " answer

@@ -8,9 +8,6 @@ if [ "$?" != "0" ]; then
     echo "Save a story ID in the '.pivotal' dotfile in project root directory"
     echo "or specify it in \$STORY environment variable."
     echo
-    echo "If you know what you're doing, but you know, for real... Then you can"
-    echo "force this operation now."
-    echo
 
     exec < /dev/tty
     read -p "Do you want to commit anyway? (y/N) " answer
